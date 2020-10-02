@@ -5,4 +5,6 @@ gmic $1 -a z \
      -e \"::: split in multipage image of same size\" \
      -split_colors[-1] 0 -rm[1] \
      -e \"::: dilate and keep the rectanle around each object\" \
-     -dilate[1--1] 40 -repeat \{\$\!-1\}  --autocrop_seq[0,1] 0 -rm[1] -rm[-1]  -done -rm[0] -o $2
+     -dilate[1--1] 40 -o[1--1] $2_mask.tif \
+     -repeat \{\$\!-1\}  --autocrop_seq[0,1] 0 -rm[1] -rm[-1]  -done -rm[0] -o $2
+
