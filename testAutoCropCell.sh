@@ -3,6 +3,7 @@ fileOut=/tmp/crop_out.tif
 
 # gmic $fileIn -a z -resize 25%,25%,25% -o /tmp/resized.tif
 
+rm /tmp/crop_out*
 ./autoCropCell.sh /tmp/resized.tif $fileOut
 
 parallel gmic {} -a z -orthoMIP ::: /tmp/crop*
