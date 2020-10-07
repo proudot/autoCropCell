@@ -5,7 +5,8 @@ fileOut=/tmp/crop_out.tif
 
 ./autoCropCell.sh /tmp/resized.tif $fileOut
 
-parallel gmic {} -a z -orthoMIP ::: ls /tmp/crop*
+parallel gmic {} -a z -orthoMIP ::: /tmp/crop*
 
+du -sh /tmp/crop*
 
 
